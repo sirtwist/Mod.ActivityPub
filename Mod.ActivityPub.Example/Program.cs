@@ -4,9 +4,14 @@ using Mod.ActivityPub.UI;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews().AddActivityPubUI();
+builder.Services.AddHttpContextAccessor();
 
+// Add Resource Lookup service to provide resource information to the ActivityPub UI controllers
 builder.Services.AddScoped<IResourceLookup, ResourceLookup>();
+
+builder.Services.AddControllersWithViews()
+    // Add ActivityPub UI controllers
+    .AddActivityPubUI();
 
 var app = builder.Build();
 

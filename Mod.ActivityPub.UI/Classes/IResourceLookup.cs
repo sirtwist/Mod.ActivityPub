@@ -8,6 +8,7 @@ namespace Mod.ActivityPub.UI
 {
     public interface IResourceLookup
     {
-        public ResourceDescriptor LookupResource(string resource);
+        public ResourceDescriptor? GetResource(string resource);
+        public NodeInfo GetNodeInfo();
     }
 }

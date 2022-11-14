@@ -8,7 +8,8 @@ namespace Mod.ActivityPub.UI
 {
     public class ResourceDescriptor
     {
-        public string Subject { get; set; }
+        public string? Subject { get; set; }
+        public DateTime? Expires { get; set; }
         public IEnumerable<string>? Aliases { get; set; }
         public Dictionary<string, string>? Properties { get; set; }
         public IEnumerable<ResourceDescriptorLink>? Links { get; set; }
